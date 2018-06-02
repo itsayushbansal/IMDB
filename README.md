@@ -3,17 +3,18 @@ CRUD operations in Django Rest Framework for Movies.
 
 You can find the documentation of the api's below:
 
-https://documenter.getpostman.com/view/1603718/marketplace/7E8gbFN
+Movie API's : https://documenter.getpostman.com/view/1603718/RW8FF6kL
+Auth API's : https://documenter.getpostman.com/view/1603718/RW8FF6kN
 
 # Dependencies
-Python 2.x
-
-mySQL
+Python 3.4
+Django >= 1.9.1
+PostgreSQL
 
 # Virtual Environment Setup
 Setup virtualenv with command: 
 
-$ virtualenv -p python2 marketplace
+$ virtualenv -p python3 imdb
 
 Move to virtualenv and activate its environment:
 
@@ -37,16 +38,15 @@ $ GRANT ALL PRIVILEGES ON product.* TO 'testuser'@'localhost';
 $ FLUSH PRIVILEGES;
 
 # Github Repository Setup
-Go to the link: https://github.com/itsayushbansal/marketplace
+Go to the link: https://github.com/itsayushbansal/IMDB
 
-Clone this new repository : git clone https://github.com/itsayushbansal/marketplace.git
+Clone this new repository : git clone https://github.com/itsayushbansal/IMDB.git
 
 Using Command Line, navigate to the repository
 
 # Dependency Setup
 Install requirements: "pip install -r requirements.txt".
-
-In config.ini, change user and password to your mysql user's username and password.
+In settings.py change 
 
 # To Run
-$ python views.py
+$ python manage.py runserver
