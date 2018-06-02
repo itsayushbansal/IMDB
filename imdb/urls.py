@@ -14,7 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url,include
+from django.conf.urls.static import static
 from django.contrib import admin
+
+from . import settings
 
 from rest_framework.authtoken import views as rest_framework_views
 
@@ -22,4 +25,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/',include('movies.urls')),
     url(r'^get_auth_token/$', rest_framework_views.obtain_auth_token, name='get_auth_token'),
+
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
