@@ -8,7 +8,7 @@ Movie API's : https://documenter.getpostman.com/view/1603718/RW8FF6kL
 Auth API's : https://documenter.getpostman.com/view/1603718/RW8FF6kN
 
 # Dependencies
-Python 3.4
+Python >= 3.4
 
 Django >= 1.9.1
 
