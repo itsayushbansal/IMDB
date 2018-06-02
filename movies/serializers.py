@@ -20,12 +20,14 @@ class MovieSerializer(serializers.ModelSerializer):
     genre = GenreSerializer(many=True,read_only=True)
 
     def create(self, validated_data):
+        "Overriding the managers create function"
         genre_ids = validated_data.pop('genre_ids')
         movie_obj = Movie.objects.create(**validated_data)
         movie_obj.genre.add(*genre_ids)
         return movie_obj
 
     def update(self, instance, validated_data):
+        "Overriding the managers update function"
         if validated_data.get('genre_ids'):
             instance.genre.clear()
             instance.genre.add(*validated_data.pop('genre_ids'))
