@@ -15,7 +15,8 @@ class MovieSerializer(serializers.ModelSerializer):
     """
     To serialize movie objects data
     """
-    genre_ids = serializers.ListField(child=serializers.PrimaryKeyRelatedField(queryset=Genre.objects.filter(is_deleted=False)),write_only=True)
+    genre_ids = serializers.ListField(child=serializers.PrimaryKeyRelatedField(queryset=Genre.objects.filter(is_deleted=False)),
+                                      write_only=True,allow_empty=False)
     genre = GenreSerializer(many=True,read_only=True)
 
     def create(self, validated_data):
