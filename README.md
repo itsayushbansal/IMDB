@@ -9,7 +9,9 @@ Auth API's : https://documenter.getpostman.com/view/1603718/RW8FF6kN
 
 # Dependencies
 Python 3.4
+
 Django >= 1.9.1
+
 PostgreSQL >= 9.1
 
 # Virtual Environment Setup
@@ -43,8 +45,11 @@ Using Command Line, navigate to the repository
 
 # Dependency Setup
 Install requirements: "pip install -r requirements.txt".
+
 In settings.py, change <DB_PASSWORD>
+
 Run migrations: "python manage.py migrate"
+
 Create superuser: "python manage.py createsuperuser"
 
 # To Run
