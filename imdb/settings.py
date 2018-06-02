@@ -84,12 +84,12 @@ WSGI_APPLICATION = 'imdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'imdb',
         'USER':'root',
         'PASSWORD':'root',
         'HOST':'localhost',
-        'PORT':'3306'
+        'PORT':''
     }
 }
 
@@ -137,5 +137,12 @@ STATIC_ROOT = BASE_DIR +  '/static/'
 STATICFILES_DIRS = (
     BASE_DIR + '/statics/',
 )
+
+#setting up database
+
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 
 
