@@ -10,13 +10,13 @@ from .import serializers as movies_serializers
 
 class Movie(APIView):
     """
-
+    Class View for CRUD operation on movies.
     """
     permission_classes = (movies_permissions.IsAuthenticatedAndAdmin,)
 
     def get(self,request):
         """
-
+        API to get the movies
         :param request:
         :return:
         """
@@ -26,7 +26,7 @@ class Movie(APIView):
 
     def post(self,request):
         """
-
+        API to save movie
         :param request:
         :return:
         """
@@ -38,7 +38,7 @@ class Movie(APIView):
 
     def put(self,request):
         """
-
+        API to edit a movie
         :param request:
         :return:
         """
@@ -56,7 +56,7 @@ class Movie(APIView):
 
     def delete(self,request):
         """
-
+        API to delete a movie
         :param request:
         :return:
         """
