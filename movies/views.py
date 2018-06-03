@@ -68,3 +68,21 @@ class Movie(APIView):
             return Response(data={'error':'Invalid movie_id'},status=status.HTTP_400_BAD_REQUEST)
         movie_obj.delete()
         return Response(data={'message':'Deleted Successfully'},status=status.HTTP_200_OK)
+
+
+class Search(APIView):
+    """
+    Class View to search movies
+    """
+    def get(self,request):
+        """
+        API to search movies based on given query
+        :param request:
+        :return:
+        """
+        if not request.query_params.get('name'):
+            return Response(data={'error':'name is a required field'},status=status.HTTP_400_BAD_REQUEST)
+        movie_objs = movies_models.Movie.objects.filter(name__icontains=request.query_params.get('name'),
+                                                        is_deleted=False)
+        movie_get_serializer = movies_serializers.MovieSerializer(movie_objs,many=True)
+        return Response(data={'data':movie_get_serializer.data},status=status.HTTP_200_OK)

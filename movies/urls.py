@@ -20,4 +20,5 @@ from . import views
 
 urlpatterns = [
     url(r'^movies/', views.Movie.as_view(),name='movies-list'),
+    url(r'^search/', views.Search.as_view(),name='search'),
 ]
