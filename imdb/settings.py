@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3s5n2+q=%lbvpg^%lv+2k1pmw$&l1faq32*jkus=38r%tm7xs*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['thawing-tundra-57441.herokuapp.com']
 
